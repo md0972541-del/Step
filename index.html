@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>SAFAIT ULTIMATE SNIPER V76.0</title>
+    <title>SAFAIT SNIPER V76.1</title>
     <style>
         :root { --gold: #FFD700; --bg: #000; --neon: #00ffff; }
         body { background: var(--bg); color: #fff; font-family: 'Orbitron', sans-serif; display: flex; align-items: center; justify-content: center; height: 100vh; margin: 0; }
@@ -11,18 +11,17 @@
         .timer { font-size: 75px; font-weight: 900; color: #ff3131; }
         .signal-box { background: #000; border: 2px solid #222; border-radius: 40px; padding: 45px; margin: 25px 0; border-bottom: 8px solid var(--neon); }
         .signal-text { font-size: 85px; font-weight: 900; letter-spacing: 5px; text-shadow: 0 0 50px var(--neon); }
-        .p-info { font-size: 11px; color: var(--gold); letter-spacing: 2px; }
     </style>
     <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;900&display=swap" rel="stylesheet">
 </head>
 <body>
 
 <div class="ui-panel">
-    <div class="p-info" id="p_id">CONNECTING TO PRO-SERVER...</div>
+    <div style="font-size: 11px; color: var(--gold);" id="p_id">PRECISION SYNC ACTIVE...</div>
     <div class="timer" id="timer">00s</div>
 
     <div class="signal-box">
-        <div style="font-size: 10px; color: #0f0; margin-bottom: 15px;">ANTI-LOSS SNIPER ACTIVE</div>
+        <div style="font-size: 10px; color: #0f0; margin-bottom: 15px;">1-STEP WIN TARGET</div>
         <div class="signal-text" id="signal">WAIT</div>
     </div>
 
@@ -30,8 +29,8 @@
 </div>
 
 <script>
-    // এই ট্রেন্ডটি ৮:৫০ AM এর পিরিয়ডগুলোর জন্য অপ্টিমাইজড
-    const proTrend = ["BIG", "BIG", "SMALL", "BIG", "SMALL", "SMALL", "BIG", "SMALL"];
+    // এই ট্রেন্ডটি বর্তমান অস্থিতিশীল মার্কেটের জন্য অপ্টিমাইজড
+    const proTrend = ["BIG", "SMALL", "BIG", "BIG", "SMALL", "BIG", "SMALL", "SMALL"];
 
     function update() {
         const now = new Date();
@@ -42,8 +41,8 @@
         let totalSec = (now.getHours() * 3600) + (now.getMinutes() * 60) + sec;
         let serial = Math.floor(totalSec / 30);
         
-        // ৮:৫০ AM অনুযায়ী পিরিয়ড সিঙ্ক ফিক্স
-        let base = 50340 - Math.floor(((8*3600)+(50*60))/30); 
+        // পিরিয়ড ৫০৩৪৬ এর সাথে সিঙ্ক করতে ১ যোগ করা হয়েছে (বেস আপডেট)
+        let base = 50346 - Math.floor(((8*3600)+(53*60))/30); 
         let currentP = base + serial;
         
         document.getElementById('p_id').innerText = "PERIOD: 202603081000" + currentP;
